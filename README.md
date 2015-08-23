@@ -43,6 +43,7 @@ mysql> SELECT username,password,COUNT(password) FROM auth where password like '%
 
 ```
 ---
+---
 **Top 10 of attacker's IP :**
 
 ```bash
@@ -63,6 +64,7 @@ mysql> SELECT ip,COUNT(ip) from sessions GROUP by ip order by COUNT(ip) desc lim
 +----------------+-----------+
 10 rows in set (1.22 sec)
 ```
+---
 ---
 **Get top 10 Passwords :**
 
@@ -86,7 +88,7 @@ mysql> SELECT username,password,COUNT(password) FROM auth group by password orde
 
 ```
 ---
-
+---
 
 
 
