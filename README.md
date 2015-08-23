@@ -1,5 +1,4 @@
 # mysql-kippo-honeypot-queries
-Useful mysql queries for Kippo Honeypot
 
 Just some mysql queries I created to extract data from my kippo honeypot database.
 
