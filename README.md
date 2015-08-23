@@ -9,7 +9,7 @@ More information here : https://bruteforce.gr/logging-kippo-events-using-mysql-d
 List usernames (except root), password and occurence (limit by 10) :
 
 ```bash
-mysql> SELECT username,password,COUNT(password) FROM auth where username not like '%root%' group by password order by COUNT(password) desc limit 10;
+mysql> SELECT username,password,COUNT(password) FROM auth where username not like 'root' group by password order by COUNT(password) desc limit 10;
 +----------+----------+-----------------+
 | username | password | COUNT(password) |
 +----------+----------+-----------------+
