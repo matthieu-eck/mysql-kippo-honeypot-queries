@@ -1,5 +1,5 @@
 # mysql-kippo-honeypot-queries
-mysql-kippo-honeypot-queries
+Useful mysql queries for Kippo Honeypot
 
 Just some mysql queries I created to extract data from my kippo honeypot database.
 
@@ -129,4 +129,5 @@ mysql> SELECT count(distinct password) FROM auth;
 1 row in set (0.00 sec)
 ```
 
+A better and more complete list can be found here : https://github.com/ikoniaris/kippo-graph/blob/40cf2cc54ce9fcbc424d91efd82809830789335d/include/sql.php
 
