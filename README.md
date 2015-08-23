@@ -6,7 +6,30 @@ Just some mysql queries I created to extract data from my kippo honeypot databas
 More information here : https://bruteforce.gr/logging-kippo-events-using-mysql-db.html
 
 
-List usernames (except root), password and occurence (limit by 10) :
+**Which IP successfully with a password and how many times.**
+
+```bash
+mysql> SELECT sessions.ip,auth.password, COUNT(sessions.ip)   FROM sessions INNER JOIN auth ON sessions.id = auth.session   where auth.password="raspberry"   GROUP BY sessions.ip   ORDER BY COUNT(sessions.ip) DESC LIMIT 10;
++----------------+-----------+--------------------+
+| ip             | password  | COUNT(sessions.ip) |
++----------------+-----------+--------------------+
+| 193.104.41.137 | raspberry |                 25 |
+| 182.100.67.114 | raspberry |                 23 |
+| 43.255.189.84  | raspberry |                 17 |
+| 218.65.30.73   | raspberry |                 17 |
+| 218.87.111.116 | raspberry |                 14 |
+| 218.65.30.92   | raspberry |                 14 |
+| 218.87.111.110 | raspberry |                 14 |
+| 218.65.30.61   | raspberry |                 14 |
+| 218.87.111.109 | raspberry |                 13 |
+| 218.87.111.117 | raspberry |                 13 |
++----------------+-----------+--------------------+
+10 rows in set (5.39 sec)
+```
+
+
+
+**List usernames (except root), password and occurence (limit by 10) :**
 
 ```bash
 mysql> SELECT username,password,COUNT(password) FROM auth where username not like 'root' group by password order by COUNT(password) desc limit 10;
@@ -105,3 +128,5 @@ mysql> SELECT count(distinct password) FROM auth;
 +--------------------------+
 1 row in set (0.00 sec)
 ```
+
+
