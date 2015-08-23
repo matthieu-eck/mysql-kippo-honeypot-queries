@@ -27,8 +27,8 @@ mysql> SELECT username,password,COUNT(password) FROM auth where username not lik
 
 ```
 ---
-
-Look for a password containing cisco1234 and count how many times attackers tried :
+---
+**Look for a password containing cisco1234 and count how many times attackers tried :**
 
 ```bash
 mysql> SELECT username,password,COUNT(password) FROM auth where password like '%cisco1234%' group by password order by COUNT(password) desc limit 10;
@@ -43,7 +43,7 @@ mysql> SELECT username,password,COUNT(password) FROM auth where password like '%
 
 ```
 ---
-Top 10 of attacker's IP :
+**Top 10 of attacker's IP :**
 
 ```bash
 mysql> SELECT ip,COUNT(ip) from sessions GROUP by ip order by COUNT(ip) desc limit 10;
@@ -64,7 +64,7 @@ mysql> SELECT ip,COUNT(ip) from sessions GROUP by ip order by COUNT(ip) desc lim
 10 rows in set (1.22 sec)
 ```
 ---
-Get top 10 Passwords :
+**Get top 10 Passwords :**
 
 ```bash
 mysql> SELECT username,password,COUNT(password) FROM auth group by password order by COUNT(password) desc limit 10;
@@ -91,7 +91,7 @@ mysql> SELECT username,password,COUNT(password) FROM auth group by password orde
 
 
 
-Get number of uniq passwords in the databse:
+**Get number of uniq passwords in the databse:**
 
 ```bash
 
